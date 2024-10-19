@@ -34,6 +34,7 @@ const Account = () => {
       dispatch(logout());
       clearUserCookies("token");
       clearUserCookies("username");
+      console.log(document.cookie);
       localStorage.removeItem("auth");
       router.push("/login");
       scrollToTop();

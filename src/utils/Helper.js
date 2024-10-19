@@ -6,9 +6,15 @@ export const scrollToTop = () => {
 };
 
 export function clearUserCookies(cookieName) {
-  console.log(document.cookie);
-  // Set the cookie's expiration to a past date to delete it
-  document.cookie = `${cookieName}=; path=/; domain=${process.env.NEXT_PUBLIC_FRONTEND_URL}; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+  const cookies = document.cookie.split(";");
+
+  cookies.forEach((cookie) => {
+    const [name] = cookie.trim().split("=");
+    if (name === cookieName) {
+      // Set the cookie expiration date to a past time
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    }
+  });
 }
 
 export function dateTimeAgo(postedDate) {
