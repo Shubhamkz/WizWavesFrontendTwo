@@ -38,10 +38,10 @@ const SaveToFavourites = ({ trackId }) => {
 
   useEffect(() => {
     if (isError) {
-      if (error.message) {
-        toast.error(error.message);
-      } else if (error.data.message) {
-        toast.error(error.data.message);
+      if (error?.message) {
+        toast.error(error?.message);
+      } else if (error?.data?.message) {
+        toast.error(error?.data?.message);
       } else {
         toast.error("An error occurred");
       }
