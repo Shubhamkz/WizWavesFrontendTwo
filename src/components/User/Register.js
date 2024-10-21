@@ -62,17 +62,24 @@ const Register = () => {
 
     // Proceed with registration if all validations passed
     try {
-      const { user } = await registerApi({
+      const res = await registerApi({
         username,
         email,
         password,
       }).unwrap();
 
-      dispatch(
-        login({
-          user: user,
-        })
-      );
+      if (res?.success) {
+        toast.success("You are Registered successfully");
+        localStorage.setItem("auth", JSON.stringify(res));
+        setCookie("username", res.user.role, 1);
+        setCookie("token", res.token, 1);
+        dispatch(
+          login({
+            token: res?.token,
+            user: res?.user,
+          })
+        );
+      }
     } catch (err) {
       console.error("Error during registration:", err);
     }

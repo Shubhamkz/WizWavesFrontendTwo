@@ -53,6 +53,8 @@ const Login = () => {
     if (isError) {
       if (error.message) {
         toast.error(error.message);
+      } else if (error.data.message) {
+        toast.error(error.data.message);
       } else {
         toast.error("Something went wrong");
       }

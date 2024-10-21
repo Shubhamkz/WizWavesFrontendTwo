@@ -9,16 +9,21 @@ import { logout } from "@/redux/features/userAuth/authSlice";
 import { clearUserCookies, scrollToTop } from "@/utils/Helper";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 const Account = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const { data: authData, isLoading } = useGetAuthProfileQuery();
+  const pathname = usePathname();
+  const { data: authData, isLoading, refetch } = useGetAuthProfileQuery();
   const [logoutApi, { isSuccess }] = useLogoutMutation();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    refetch();
+  }, [refetch, pathname]);
 
   const handleLogout = async () => {
     await logoutApi();
