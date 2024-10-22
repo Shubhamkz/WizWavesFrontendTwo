@@ -14,7 +14,7 @@ const MainSidebar = ({ content, playlistID }) => {
   if (isLoading) return;
 
   return (
-    <section className="col-span-3 bg-gray-900">
+    <section className="col-span-3 bg-gray-900  hidden md:block">
       {content === "Home" && <Navigation content={content} />}
       {content === "Favourites" && <Navigation content={content} />}
       {content === "Recents" && <Navigation content={content} />}
