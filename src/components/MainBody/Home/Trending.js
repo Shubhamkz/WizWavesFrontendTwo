@@ -12,10 +12,10 @@ const Trending = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="col-span-2">
+    <div className="col-span-6 md:col-span-2">
       <section>
         <div className="">
-          <div className="mb-4">
+          <div className="mb-2 md:mb-4">
             <div className="font-bold text-base lg:text-lg">Trending</div>
           </div>
           <div>

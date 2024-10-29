@@ -60,7 +60,7 @@ const TrendingCard = ({ logo, songName, artist, preview_url, trackId }) => {
         <div className="">
           {logo && (
             <Image
-              className="w-20 h-12 rounded-xl"
+              className="w-20 max-w-16 md:max-w-20 h-12 rounded-xl"
               src={logo}
               alt={"Album Art"}
               height={600}

@@ -39,7 +39,7 @@ const TopPlaylist = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <section className="col-span-4">
+    <section className="hidden md:block col-span-4">
       <div className="px-6 pb-6">
         <div className="flex justify-between mb-4">
           <div className="font-bold text-base lg:text-lg">

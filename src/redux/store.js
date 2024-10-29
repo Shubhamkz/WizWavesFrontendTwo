@@ -10,6 +10,7 @@ import searchSongSlice from "./features/Deezer/searchSongSlice";
 import musicUploadSlice from "./features/MusicPlayer/musicUploadSlice";
 import playlistSlice from "./features/Playlist/playlistSlice";
 import saveToPlaylist from "./features/Playlist/saveToPlaylist";
+import sidebarToggleSlice from "./features/MusicPlayer/sidebarToggleSlice";
 
 export const makeStore = () => {
   return configureStore({
@@ -25,6 +26,7 @@ export const makeStore = () => {
       trackData: musicUploadSlice,
       createPlaylist: playlistSlice,
       saveTrack: saveToPlaylist,
+      sidebarIsOpen: sidebarToggleSlice,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({

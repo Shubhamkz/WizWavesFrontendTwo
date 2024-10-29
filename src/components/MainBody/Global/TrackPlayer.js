@@ -8,7 +8,7 @@ import {
 } from "@/redux/features/MusicPlayer/trackPlayerSlice";
 import TrackPlayerPc from "./TrackPlayerPc";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const TrackPlayer = () => {
   const dispatch = useDispatch();
@@ -73,9 +73,9 @@ const TrackPlayer = () => {
     <section
       className={`${
         isMobileView
-          ? "bg-slate-900 md:bg-gradient-to-r  md:from-[#000000d6] md:via-[#000000bf] md:to-[#111827c7] h-[82vh] md:h-max translate-y-0  transition-all duration-700 bottom-0"
-          : "bg-gradient-to-r  from-[#000000d6] via-[#000000bf] to-[#111827c7] translate-y-full bottom-20 md:bottom-24"
-      }  absolute z-50  left-0 w-full px-3 md:px-6 py-4 `}
+          ? "bg-slate-900 md:bg-gradient-to-r md:from-[#000000d6] md:via-[#000000bf] md:to-[#111827c7] h-[82vh] md:h-max translate-y-0 transition-all duration-700 bottom-0"
+          : "bg-gradient-to-r from-[#000000d6] via-[#000000bf] to-[#111827c7] translate-y-full bottom-28 pb-12 md:pb-0 md:bottom-24"
+      }  absolute z-50  left-0 w-full px-3 md:px-6 py-4`}
     >
       <div className="relative block md:hidden">
         <div
@@ -84,7 +84,7 @@ const TrackPlayer = () => {
         >
           <FontAwesomeIcon
             className="font-bold bg-gray-700 px-2 py-2 rounded-full cursor-pointer hover:bg-gray-800 hover:scale-125 transition-all duration-500"
-            icon={faChevronUp}
+            icon={isMobileView ? faChevronDown : faChevronUp}
           />
         </div>
       </div>

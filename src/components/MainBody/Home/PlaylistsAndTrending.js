@@ -13,11 +13,11 @@ const PlaylistsAndTrending = () => {
 
   return (
     <>
-      <section className="col-span-12 md:col-span-9 max-h-[100vh] overflow-hidden relative">
+      <section className=" max-h-[100vh] overflow-hidden relative">
         <Header />
         <RecentPlays />
-        <div className="px-6 py-4">
-          <div className="grid grid-cols-6 ">
+        <div className="px-2 md:px-6 py-4">
+          <div className="grid grid-cols-6">
             <Trending />
             <TopPlaylist />
           </div>

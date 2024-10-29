@@ -30,14 +30,14 @@ const RecentPlays = () => {
 
   return (
     <section>
-      <div className="px-6 py-6">
+      <div className="px-2 md:px-6 py-6">
         <div className="flex justify-between mb-4">
           <div className="font-bold text-base lg:text-lg">Recently Played</div>
           <div className="px-3">
             <p className="text-gray-200 text-xs">See all</p>
           </div>
         </div>
-        <div className="grid grid-cols-12 gap-4">
+        <div className="flex max-w-[100vw] overflow-y-scroll md:w-full md:grid md:grid-cols-12 gap-4 hide-scrollbar">
           {recentlyPlayed
             ?.slice(0, 6)
             .map(

@@ -28,7 +28,9 @@ const TrackPlayerPc = ({
     <div className="flex flex-col md:flex-row justify-center md:justify-between items-center">
       {/* Song Info */}
       <div
-        className={`${isMobileView ? " flex" : "hidden"}   items-center gap-4`}
+        className={`${
+          isMobileView ? " flex" : "hidden md:flex"
+        } items-center gap-4`}
       >
         <img
           src={currentTrack?.albumArt || "/path-to-default-album-art.jpg"}
@@ -111,13 +113,13 @@ const TrackPlayerPc = ({
       {/* Volume Control */}
       <div
         className={`${
-          isMobileView ? "flex mt-16" : "hidden"
+          isMobileView ? "flex mt-8" : "hidden"
         }  md:flex items-center gap-4 z-20`}
       >
         <FontAwesomeIcon className="text-white" icon={faVolumeUp} />
         <input
           type="range"
-          className="w-20 h-1 bg-gray-400 rounded-lg appearance-none cursor-pointer"
+          className="w-28 md:w-20 h-1 bg-gray-400 rounded-lg appearance-none cursor-pointer"
           min="0"
           max="100"
           value={volume}
