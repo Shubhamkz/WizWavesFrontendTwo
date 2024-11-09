@@ -13,7 +13,7 @@ const PlaylistsAndTrending = () => {
 
   return (
     <>
-      <section className=" max-h-[100vh] overflow-hidden relative">
+      <section className="min-h-[100vh] overflow-hidden relative">
         <Header />
         <RecentPlays />
         <div className="px-2 md:px-6 py-4">
